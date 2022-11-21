@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
-from scapy.all import *
+import scapy
 
 
 class Sniffer:
@@ -15,7 +15,7 @@ class Sniffer:
             print(packet.summary())
 
     def run_forever(self):
-        sniff(iface=self.args.interface, prn=self, store=0)
+        sniffer(iface=self.args.interface, prn=self, store=0)
 
 
 if __name__ == "__main__":
